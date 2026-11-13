@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Store</title>
+    <link rel="icon" type="image/svg+xml" href="icone-tech-store.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="conteudo cabecalho">
+            <h1>TECH STORE</h1>
+
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="admin.html">Administração</a>
+            </nav>
+
+            <button id="botaoCarrinho" onclick="mostrarCarrinho()">
+                Carrinho: <span id="quantidadeCarrinho">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="banner">
+            <div class="conteudo banner-grade">
+                <div class="banner-texto">
+                    <img class="logo-banner" src="logo-tech-store.svg" alt="Tech Store">
+                    <p class="destaque">OFERTA DA SEMANA</p>
+                    <h2 id="tituloBanner">Monte o seu setup</h2>
+                    <p id="textoBanner">Periféricos de qualidade com preços especiais.</p>
+                    <a href="#produtos">Ver produtos</a>
+                </div>
+
+                <div class="video-banner">
+                    <iframe
+                        src="https://www.youtube.com/embed/ZRKv5atuGFw"
+                        title="AirPods Max Unboxing"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="conteudo secao-categorias">
+            <h2>Categorias</h2>
+            <p>Escolha uma categoria para ver os produtos.</p>
+
+            <div class="categorias">
+                <button onclick="filtrarCategoria('Todos')">Todos</button>
+                <button onclick="filtrarCategoria('Teclados')">Teclados</button>
+                <button onclick="filtrarCategoria('Mouses')">Mouses</button>
+                <button onclick="filtrarCategoria('Headsets')">Headsets</button>
+                <button onclick="filtrarCategoria('Acessórios')">Acessórios</button>
+            </div>
+        </section>
+
+        <section id="produtos" class="conteudo secao-produtos">
+            <div class="titulo-secao">
+                <div>
+                    <h2>Nossos produtos</h2>
+                    <p>Produtos para deixar o seu computador ainda melhor.</p>
+                </div>
+
+                <label>
+                    Ordenar:
+                    <select id="ordenacao" onchange="mostrarProdutos()">
+                        <option value="padrao">Padrão</option>
+                        <option value="menor">Menor preço</option>
+                        <option value="maior">Maior preço</option>
+                    </select>
+                </label>
+            </div>
+
+            <div id="listaProdutos" class="lista-produtos"></div>
+            <p id="mensagemVazia" class="mensagem-vazia">Nenhum produto encontrado.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="conteudo rodape">
+            <section>
+                <h2>Institucional</h2>
+                <a href="quem-somos.html">Quem somos</a>
+            </section>
+
+            <section>
+                <h2>Atendimento</h2>
+                <a href="contato.html">Contato e suporte</a>
+                <a href="faq.html">Perguntas frequentes</a>
+            </section>
+
+            <section>
+                <h2>Segurança</h2>
+                <a href="privacidade.html">Política de privacidade</a>
+                <a href="seguranca.html">Segurança nas compras</a>
+                <a href="acessibilidade.html">Acessibilidade</a>
+            </section>
+        </div>
+
+        <div class="conteudo rodape-inferior">
+            <div class="pagamentos">
+                <span>Formas de pagamento:</span>
+                <strong>Pix</strong>
+                <strong>Cartões</strong>
+            </div>
+            <p>© 2026 Tech Store. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

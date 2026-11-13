@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Tech Store</title>
+    <link rel="icon" type="image/svg+xml" href="icone-tech-store.svg">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <div class="conteudo cabecalho">
+            <h1>TECH STORE - ADMIN</h1>
+            <nav>
+                <a href="index.html">Ver loja</a>
+                <a href="#cadastro">Produtos</a>
+                <a href="#banner">Banner</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="introducao">
+            <h2>Painel de administração</h2>
+            <p>Use esta página para cadastrar e alterar os dados da loja.</p>
+
+            <div class="resumo">
+                <p>Produtos cadastrados: <strong id="totalProdutos">0</strong></p>
+                <p>Produtos em estoque: <strong id="produtosEstoque">0</strong></p>
+            </div>
+        </section>
+
+        <section id="cadastro" class="caixa">
+            <h2>Cadastro de produto</h2>
+            <p>Preencha os dados abaixo. Os campos com * são obrigatórios.</p>
+
+            <form id="formProduto">
+                <input type="hidden" id="indiceProduto">
+
+                <div class="linha-formulario">
+                    <label>
+                        Nome do produto *
+                        <input type="text" id="nomeProduto" required>
+                    </label>
+
+                    <label>
+                        Categoria *
+                        <select id="categoriaProduto" required>
+                            <option value="">Selecione</option>
+                            <option value="Teclados">Teclados</option>
+                            <option value="Mouses">Mouses</option>
+                            <option value="Headsets">Headsets</option>
+                            <option value="Acessórios">Acessórios</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="linha-formulario">
+                    <label>
+                        Preço *
+                        <input type="number" id="precoProduto" min="0" step="0.01" required>
+                    </label>
+
+                    <label>
+                        Quantidade em estoque *
+                        <input type="number" id="estoqueProduto" min="0" required>
+                    </label>
+                </div>
+
+                <label>
+                    URL da foto *
+                    <input type="url" id="imagemProduto" placeholder="https://exemplo.com/foto.jpg" required>
+                </label>
+
+                <button type="submit" id="botaoSalvar">Cadastrar produto</button>
+                <button type="button" id="botaoCancelar" onclick="cancelarEdicao()">Cancelar edição</button>
+            </form>
+        </section>
+
+        <section class="caixa">
+            <h2>Produtos cadastrados</h2>
+
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Estoque</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaProdutos"></tbody>
+                </table>
+            </div>
+
+            <p id="tabelaVazia">Nenhum produto cadastrado.</p>
+        </section>
+
+        <section id="banner" class="caixa">
+            <h2>Banner principal</h2>
+            <p>Altere o texto que aparece no início da loja.</p>
+
+            <form id="formBanner">
+                <label>
+                    Título do banner *
+                    <input type="text" id="tituloBanner" required>
+                </label>
+
+                <label>
+                    Texto do banner *
+                    <textarea id="textoBanner" rows="4" required></textarea>
+                </label>
+
+                <button type="submit">Salvar banner</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Tech Store - Área de administração</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
